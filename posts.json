@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "First Post",
+    "date": "08/01/2025",
+    "file": "post1.html"
+  },
+  {
+    "id": "2",
+    "title": "Second Post",
+    "date": "10/01/2025",
+    "file": "post2.html"
+  }
+]
