@@ -167,6 +167,11 @@
 
     </div>
 
+
+
+
+    
+
     <br>
     <div class='running_text'>
         <marquee>📢 Welcome to the PGMCOE Wagholi In-Sem Result Portal! Stay tuned for updates.</marquee>
@@ -180,7 +185,41 @@
 
 
 
+<table id="postsTable">
+    <tr style="background-color: rgb(145, 0, 0); color: white; text-align: center;">
+        <td style="width: 5%;">Sr.No</td>
+        <td style="width: 55%;">Post Name</td>
+        <td style="width: 15%;">Upload Date</td>
+        <td style="width: 25%;">&nbsp;</td>
+    </tr>
+</table>
 
+<script>
+  // Load posts dynamically from JSON
+  fetch('posts.json')
+    .then(response => response.json())
+    .then(posts => {
+      let table = document.getElementById("postsTable");
+      posts.forEach((post, index) => {
+        let row = `
+          <tr ${index % 2 === 0 ? 'class="special"' : ''}>
+            <td style="text-align: center;">${index + 1}.</td>
+            <td>${post.title}</td>
+            <td style="text-align: center;">${post.date}</td>
+            <td class="td-btn">
+              <button class="special-btn" onclick="openPost('${post.file}')">Go For Result</button>
+            </td>
+          </tr>
+        `;
+        table.innerHTML += row;
+      });
+    });
+
+  // Function to open the post dynamically
+  function openPost(postFile) {
+    window.location.href = `posts/${postFile}`;
+  }
+</script>
 
 
 
