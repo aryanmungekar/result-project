@@ -14,17 +14,35 @@
             box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
             -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            position: relative;
+            /* Add this to allow footer to stay outside */
+            padding-bottom: 50px;
+            /* Add padding to create space for the footer */
         }
 
         .heading {
             text-align: center;
             padding: 10px;
-            /* margin: 15px; */
-            background-color: rgb(223, 224, 224);
+            border-bottom: 20px solid black;
             display: flex;
-            justify-content: space-between;
-            border: 0px solid black;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 200px;
         }
+
+        .logo-container {
+            max-width: 4000px;
+            /* Set max-width to prevent logo from being too large */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            /* Ensures proper aspect ratio */
+            max-width: 100%;
+        }
+
 
         .menu-btn {
             display: flex;
@@ -34,20 +52,22 @@
         }
 
         .solo-btn {
-            border-radius: 15%;
-            background-color: white;
-            color: #c91e1e;
-            border: 2px solid #000000;
+            background: linear-gradient(45deg, #c91e1e, #b01313);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
-            padding: 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-weight: bolder;
-            font-size: larger;
+            transition: 0.3s ease;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
         }
+
         .solo-btn:hover {
-            background-color: #b41313;
-            color: #ffffff;
+            background: linear-gradient(45deg, #b01313, #a01010);
+            transform: scale(1.35);
         }
 
         .running_text {
@@ -64,14 +84,16 @@
             border: 20px solid rgb(255, 255, 255);
             width: 100%;
         }
+
         td {
             border: 1px solid rgb(163, 51, 51);
             padding: 10px;
         }
-        
+
         .special {
-            background-color:  rgb(223, 224, 224);
+            background-color: rgb(223, 224, 224);
         }
+
         .special-btn {
             /* border-radius: 15%; */
             background-color: white;
@@ -83,15 +105,45 @@
             padding-right: 50px;
             font-size: large;
         }
+
         .special-btn:hover {
             background-color: #b41313;
             color: #ffffff;
         }
+
         .td-btn {
             text-align: center;
         }
 
+        footer {
+            position: absolute;
+            /* Makes the footer position relative to the body */
+            bottom: 0;
+            /* Ensures it is placed at the bottom */
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #130808;
+            font-size: 14px;
+            color: #777;
 
+        }
+
+        @media screen and (max-width: 600px) {
+            .heading {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu-btn {
+                margin-top: 10px;
+            }
+
+            .solo-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -99,9 +151,12 @@
 
     <div class="heading">
 
-        <a href='#' style="margin-left: 30px;">
-            <img alt='Home' src='https://www.pgmozecoepune.in/wp-content/uploads/2020/10/4.png' />
-        </a>
+        <div class="logo-container">
+            <a href="#">
+                <img src="https://www.pgmozecoepune.in/wp-content/uploads/2020/10/4.png" alt="Home">
+            </a>
+        </div>
+
 
         <div class='menu-btn'>
             <a href="#"><button class="solo-btn">Home</button></a>
@@ -120,45 +175,84 @@
     <br>
     <h2>Online Result Display System:</h2>
 
-    <table id="postsTable">
-    <tr style="background-color: rgb(145, 0, 0); color: white; text-align: center;">
-        <td style="width: 5%;">Sr.No</td>
-        <td style="width: 55%;">Post Name</td>
-        <td style="width: 15%;">Upload Date</td>
-        <td style="width: 25%;">&nbsp;</td>
-    </tr>
-</table>
+    <table>
+        <tr style="background-color: rgb(145, 0, 0); color: white; width: 100%; text-align: center;">
+            <td style="width: 05%;">Sr.No</td>
+            <td style="width: 55%;">Course Name</td>
+            <td style="width: 15%;">Result Date</td>
+            <td style="width: 25%;">&nbsp;</td>
+        </tr>
 
-<script>
-  // Load posts dynamically from JSON
-  fetch('posts.json')
-    .then(response => response.json())
-    .then(posts => {
-      let table = document.getElementById("postsTable");
-      posts.forEach((post, index) => {
-        let row = `
-          <tr ${index % 2 === 0 ? 'class="special"' : ''}>
-            <td style="text-align: center;">${index + 1}.</td>
-            <td>${post.title}</td>
-            <td style="text-align: center;">${post.date}</td>
-            <td class="td-btn">
-              <button class="special-btn" onclick="openPost('${post.file}')">Go For Result</button>
-            </td>
-          </tr>
-        `;
-        table.innerHTML += row;
-      });
-    });
+        <tr>
+            <td style="text-align: center;">01.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
 
-  // Function to open the post dynamically
-  function openPost(postFile) {
-    window.location.href = `posts/${postFile}`;
-  }
-</script>
+        <tr class="special">
+            <td style="text-align: center;">02.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">03.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+
+        <tr class="special">
+            <td style="text-align: center;">04.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">01.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+
+        <tr class="special">
+            <td style="text-align: center;">02.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">03.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
+
+        <tr class="special">
+            <td style="text-align: center;">04.</td>
+            <td>S.E.(2019 CREDIT PAT.) OCT 2024</td>
+            <td style="text-align: center;">08/01/2025</td>
+            <td class="td-btn"><a href="#"><button class="special-btn">Go For Result</button></a></td>
+        </tr>
 
 
 
 
+    </table>
+
+    <div class='running_text'>
+        <marquee>📢 Thankyou</marquee>
+    </div>
+
+
+    </div>
+    <div class='footer'>
+        &#169;
+        <script>document.write(new Date().getFullYear());</script> My Blogger Site. All Rights Reserved.
+    </div>
 
 
 </body>
