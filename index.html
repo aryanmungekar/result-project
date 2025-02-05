@@ -111,17 +111,15 @@
         }
 
         footer {
-            position: absolute;
-            /* Makes the footer position relative to the body */
             bottom: 0;
-            /* Ensures it is placed at the bottom */
             width: 100%;
             text-align: center;
             padding: 10px;
-            background-color: #130808;
+            background-color: #6a0d0d;
             font-size: 14px;
-            color: #777;
-
+            color: #c5bfbf;
+            display: flex;
+            justify-content: center;
         }
 
         @media screen and (max-width: 600px) {
@@ -148,7 +146,8 @@
 
         <div class="logo-container">
             <a href="#">
-                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhdS9ubs2jBJGQdNLvS4vg3MJyDqJTDCJSf-fYnVdqpeVBjzdBZ7AwvW3XaIv6ExHQjeIWOXdBSNVCIkJmgCqx2qGHk23SLPMnVxkTtSze_ATDsq9Pqa0SStL3hPNU1OP9UvYWWxgepbNAByzkdHE3nyZFirB7eAOVNyFXzT1FPuU8LIe539n-lxK-jdyI" alt="Home">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhdS9ubs2jBJGQdNLvS4vg3MJyDqJTDCJSf-fYnVdqpeVBjzdBZ7AwvW3XaIv6ExHQjeIWOXdBSNVCIkJmgCqx2qGHk23SLPMnVxkTtSze_ATDsq9Pqa0SStL3hPNU1OP9UvYWWxgepbNAByzkdHE3nyZFirB7eAOVNyFXzT1FPuU8LIe539n-lxK-jdyI"
+                    alt="Home">
             </a>
         </div>
 
@@ -165,7 +164,7 @@
 
 
 
-    
+
 
     <br>
     <div class='running_text'>
@@ -180,23 +179,23 @@
 
 
 
-<table id="postsTable">
-    <tr style="background-color: rgb(145, 0, 0); color: white; text-align: center;">
-        <td style="width: 5%;">Sr.No</td>
-        <td style="width: 55%;">Post Name</td>
-        <td style="width: 15%;">Upload Date</td>
-        <td style="width: 25%;">&nbsp;</td>
-    </tr>
-</table>
+    <table id="postsTable">
+        <tr style="background-color: rgb(145, 0, 0); color: white; text-align: center;">
+            <td style="width: 5%;">Sr.No</td>
+            <td style="width: 55%;">Post Name</td>
+            <td style="width: 15%;">Upload Date</td>
+            <td style="width: 25%;">&nbsp;</td>
+        </tr>
+    </table>
 
-<script>
-  // Load posts dynamically from JSON
-  fetch('posts.json')
-    .then(response => response.json())
-    .then(posts => {
-      let table = document.getElementById("postsTable");
-      posts.forEach((post, index) => {
-        let row = `
+    <script>
+        // Load posts dynamically from JSON
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                let table = document.getElementById("postsTable");
+                posts.forEach((post, index) => {
+                    let row = `
           <tr ${index % 2 === 0 ? 'class="special"' : ''}>
             <td style="text-align: center;">${index + 1}.</td>
             <td>${post.title}</td>
@@ -206,33 +205,33 @@
             </td>
           </tr>
         `;
-        table.innerHTML += row;
-      });
-    });
+                    table.innerHTML += row;
+                });
+            });
 
-  // Function to open the post dynamically
-  function openPost(postFile) {
-    window.location.href = `posts/${postFile}`;
-  }
-</script>
-
-
+        // Function to open the post dynamically
+        function openPost(postFile) {
+            window.location.href = `posts/${postFile}`;
+        }
+    </script>
 
 
 
 
 
-    
+
+
+
     <div class='running_text'>
         <marquee>📢 Thankyou</marquee>
+
     </div>
 
+    <br><br><br><br>
+    <footer>
+        PGMCOE Wagholi. All Rights Reserved.</p>
+    </footer>
 
-    <center></div>
-    <div class='footer'>
-        &#169;
-        <script>document.write(new Date().getFullYear());</script> My Blogger Site. All Rights Reserved.
-    </div></center>
 
 
 </body>
