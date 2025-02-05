@@ -1,0 +1,34 @@
+Steps to get the correct Google Sheets link:
+Open your Google Sheet.
+
+Share the Google Sheet by clicking on the Share button at the top-right of the sheet.
+
+In the Sharing settings, ensure that the sheet is set to be viewable by anyone with the link.
+
+Copy the shareable link that looks like this:
+
+ruby
+Copy
+Edit
+https://docs.google.com/spreadsheets/d/your_spreadsheet_id/edit?usp=sharing
+Convert it to a CSV export link by replacing the part edit?usp=sharing with export?format=csv. The final link should look like:
+
+perl
+Copy
+Edit
+https://docs.google.com/spreadsheets/d/your_spreadsheet_id/export?format=csv
+Example:
+If your original Google Sheet link is:
+
+bash
+Copy
+Edit
+https://docs.google.com/spreadsheets/d/1QoLtpYXql4BCjf3fnTKSinP019WUodFtWpM0QIYBq1w/edit?usp=sharing
+Then the correct CSV export link would be:
+
+bash
+Copy
+Edit
+https://docs.google.com/spreadsheets/d/1QoLtpYXql4BCjf3fnTKSinP019WUodFtWpM0QIYBq1w/export?format=csv
+What to Do:
+Replace 'https://docs.google.com/spreadsheets/d/1QoLtpYXql4BCjf3fnTKSinP019WUodFtWpM0QIYBq1w/export?format=csv' in the script with your actual CSV export link.
