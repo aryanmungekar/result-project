@@ -1,107 +1,23 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    </meta>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    </meta>
     <title>Result Portal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
 
     <style>
-        body {
-            margin: 50px;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            border: 1px solid black;
-            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-            position: relative;
-            padding-bottom: 50px;
+        body{
+           padding: 20px; 
         }
-
-        .heading {
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-            /* border-bottom: 2px solid black; */
-            /* border-top: 2px solid black; */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-btn {
-            display: flex;
-            justify-content: space-between;
-            margin-right: 30px;
-            gap: 25px;
-        }
-
-        .solo-btn {
-            background: linear-gradient(45deg, #c91e1e, #b01313);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-weight: bold;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s ease;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .solo-btn:hover {
-            background: linear-gradient(45deg, #b01313, #a01010);
-            transform: scale(1.35);
-        }
-
-        .running_text {
-            background-color: #f8d7da;
-            border: 2px solid #c91e1e;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        td {
-            border: 1px solid rgb(163, 51, 51);
-            padding: 10px;
-        }
-
-        .special {
-            background-color: rgb(223, 224, 224);
-        }
-
-        .special-btn {
-            background-color: white;
-            color: #c91e1e;
-            border: 2px solid #c91e1e;
-            cursor: pointer;
-            padding: 5px 50px;
-            font-size: large;
-        }
-
-        .special-btn:hover {
-            background-color: #b41313;
-            color: #ffffff;
-        }
-
-        .td-btn {
-            text-align: center;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-            background-color: #130808;
-            font-size: 14px;
-            color: #777;
-        }
-
         table {
             border-collapse: collapse;
             width: 1200px;
@@ -118,14 +34,14 @@
             background-color: #f0f1ef;
         }
 
-        h1 {
+        h2 {
             text-align: center;
             margin-bottom: 50px;
         }
 
         .dnld-btn {
             width: 100%;
-
+            
             display: flex;
             justify-content: right;
             padding-top: 30px;
@@ -134,8 +50,8 @@
 
 
         .student-image {
-            max-width: 50%;
-            max-height: 50%;
+            max-width: 70%;
+            max-height: 70%;
             margin-top: 05px;
             border: 2px solid #333;
             margin-right: 20px;
@@ -353,33 +269,31 @@
         .hidden {
             display: none;
         }
+        .logo-container {
+            max-width: 1000px;
+            /* Set max-width to prevent logo from being too large */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            /* Ensures proper aspect ratio */
+            max-width: 100%;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="heading">
-        <a href='#' style="margin-left: 30px;">
-            <img alt='Home' src='https://www.pgmozecoepune.in/wp-content/uploads/2020/10/4.png' />
-        </a>
+    <br><br>
+     <hr><center><div class="logo-container">
+            <a href="#">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhdS9ubs2jBJGQdNLvS4vg3MJyDqJTDCJSf-fYnVdqpeVBjzdBZ7AwvW3XaIv6ExHQjeIWOXdBSNVCIkJmgCqx2qGHk23SLPMnVxkTtSze_ATDsq9Pqa0SStL3hPNU1OP9UvYWWxgepbNAByzkdHE3nyZFirB7eAOVNyFXzT1FPuU8LIe539n-lxK-jdyI"
+                    alt="Home">
+            </a>
+        </div></center><hr><br>
 
-        <div class='menu-btn'>
-            <a href="#"><button class="solo-btn">Home</button></a>
-            <a href="#"><button class="solo-btn">About</button></a>
-            <a href="#"><button class="solo-btn">Contact</button></a>
-            <a href="#"><button class="solo-btn">Result</button></a>
-        </div>
-    </div>
-
-    <br>
-    <div class='running_text'>
-        <marquee>📢 Welcome to the PGMCOE Wagholi In-Sem Result Portal! Stay tuned for updates.</marquee>
-    </div>
-
-
-
-
-    <h1>Student Result Portal</h1>
+    <h2>Student Result Portal</h2>
     <center>
         <div id="input-fields">
             <label for="rollNo">Enter Roll Number:</label><br />
@@ -414,7 +328,7 @@
 
 
     <div class="dnld-btn">
-        <button id="download-pdf-btn" style="display:none;" onclick="downloadPDF()">Download PDF</button>
+        <button id="download-pdf-btn" style="display:none;" onclick="downloadPDF()"></button>
     </div>
 
 
@@ -603,41 +517,30 @@
             }
         }
     </script>
-
     <script>
         function downloadPDF() {
-            const element = document.getElementById('printout-container');
-            const pdf = new jsPDF('p', 'mm', 'a4');
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = pdf.internal.pageSize.getHeight();
+    const element = document.getElementById('printout-container');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
 
-            html2canvas(element).then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
-                const imgWidth = canvas.width;
-                const imgHeight = canvas.height;
-                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-                const scaledWidth = imgWidth * ratio;
-                const scaledHeight = imgHeight * ratio;
+    html2canvas(element).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+        const scaledWidth = imgWidth * ratio;
+        const scaledHeight = imgHeight * ratio;
 
-                pdf.addImage(imgData, 'PNG', 0, 0, scaledWidth, scaledHeight);
-                pdf.save('result.pdf');
-            }).catch((error) => {
-                console.error('Error generating PDF:', error);
-            });
-        }
+        pdf.addImage(imgData, 'PNG', 0, 0, scaledWidth, scaledHeight);
+        pdf.save('result.pdf');
+    }).catch((error) => {
+        console.error('Error generating PDF:', error);
+        downloadButton.style.display = 'block';
+    });
+}
+
     </script>
-
-
-
-
-
-
-
-
-    <div class='footer'>
-        &#169;
-        <script>document.write(new Date().getFullYear());</script> My Blogger Site. All Rights Reserved.
-    </div>
 
 </body>
 
