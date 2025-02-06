@@ -1,32 +1,50 @@
 [
   {
     "id": "1",
-    "title": "First Post",
+    "title": "TE AIDS 2025",
     "date": "08/01/2025",
     "file": "posts1.html"
   },
   {
     "id": "2",
-    "title": "Second Post",
+    "title": "TE CSE(A) 2025",
     "date": "10/01/2025",
     "file": "posts2.html"
   },
   {
     "id": "3",
-    "title": "First Post",
-    "date": "08/01/2025",
+    "title": "TE CSE(B) 2025",
+    "date": "05/01/2025",
     "file": "posts3.html"
   },
   {
     "id": "4",
-    "title": "4 Post",
+    "title": "TE IT 2025",
     "date": "08/01/2025",
     "file": "posts4.html"
   },
   {
-    "id": "4",
-    "title": "4 Post",
+    "id": "5",
+    "title": "Demo1",
     "date": "08/01/2025",
-    "file": "posts5.html"
+    "file": "posts1.html"
+  },
+  {
+    "id": "6",
+    "title": "Demo2",
+    "date": "08/01/2025",
+    "file": "posts2.html"
+  },
+  {
+    "id": "7",
+    "title": "Demo3",
+    "date": "08/01/2025",
+    "file": "posts3.html"
+  },
+   {
+    "id": "8",
+    "title": "Demo3",
+    "date": "08/01/2025",
+    "file": "posts4.html"
   }
 ]
